@@ -1,0 +1,64 @@
+main
+  #content
+    // About Me
+    .box
+      .title About Me
+      each paragraph in aboutme
+        p= paragraph
+    // Education
+    .box
+      .title Education
+      each school in schools
+        .inner-box
+          .logo(style=`background-image: url('assets/main/${school.logo}');`)
+          div
+            .side-icon.font-bold(style=`background-image: url('assets/main/${school.icon}');`)
+              if school.link 
+                a(href="https://www.linkedin.com/groups/12455248/") #{school.text}
+              else 
+                | #{school.text}
+            span.side-icon(style="background-image: url('assets/main/date.svg');") #{school.date}
+            span.side-icon(style="background-image: url('assets/main/school.svg');") #{school.name}
+    // Experience
+    .box
+      .title Experience
+      each experience in experiences
+        .inner-box
+          .logo(style=`background-image: url('assets/main/${experience.icon}');`)
+          div
+            .side-icon.font-bold(style="background-image: url('assets/main/job.svg');") #{experience.text}
+            .side-icon(style="background-image: url('assets/main/school.svg');") #{experience.name}
+            .side-icon(style="background-image: url('assets/main/date.svg');") #{experience.date}
+    // Skills
+    .box
+      .title Skills
+      .flex.flex-wrap.gap-2.justify-center
+        each skill in skills
+          .stack-box
+            .stack-title= skill.title
+            .stack-list
+              each icon in skill.icons
+                .stack-item(style=`background-image:url(assets/skill/${icon})`)
+            small!= skill.small
+    // Certificates
+    .box
+      .title Certificates
+      .grid.gap-2.grid-cols-2
+        each certificate in certificates
+          .inner-box
+            .logo(style=`background-image: url('assets/main/${certificate.logo}');`)
+            div
+              .side-icon.font-bold(style="background-image: url('assets/main/associate.svg');")
+                a(href=certificate.link)= certificate.name
+              .side-icon(style="background-image: url('assets/main/teacher.svg');")= certificate.from
+    // Projects
+    .box
+      .title Projects
+      .grid.gap-2.grid-cols-2
+        each project in projects
+          .inner-box
+            .logo(style=`background-image: url('assets/main/${project.icon}');`)
+            div
+              .side-icon(style="background-image: url('assets/main/project.svg');")
+                a.font-bold(href=project.link)= project.name
+              .side-icon(style="background-image: url('assets/main/description.svg');")= project.desc

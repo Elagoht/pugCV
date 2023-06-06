@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    @apply text-[10pt] bg-neutral-900;
+}
+
+* {
+    @apply leading-tight;
+}
+
+body {
+    background-image: url("assets/background.png");
+    background-position: center;
+    width: 210mm;
+    height: 297mm;
+    @apply bg-sky-50 flex m-auto;
+}
+
+p {
+    @apply leading-tight text-justify
+}
+
+p::first-letter {
+    @apply ml-8
+}
+
+small {
+    @apply text-sky-900 leading-tight flex justify-center items-center text-center mt-1
+}
+
+hr {
+    background-image: url("assets/side/hr.png");
+    @apply w-full mt-2 h-[1px] bg-transparent border-transparent bg-cover;
+}
+
+#side-panel {
+    font-size: 11pt;
+    @apply bg-sky-700 p-4 flex flex-col items-center gap-2 text-sky-50 flex-1;
+}
+
+#pp {
+    background-image: url("assets/main/pp.png");
+    @apply aspect-square rounded-full border-4 border-sky-100 bg-slate-500 w-56 mt-4 bg-cover;
+}
+
+#name {
+    @apply text-2xl text-center font-bold
+}
+
+a {
+    @apply underline underline-offset-2
+}
+
+table {
+    @apply w-full
+}
+
+th,
+.side-title {
+    @apply font-bold text-lg text-left w-full text-sky-100;
+}
+
+th {
+    @apply pb-2;
+}
+
+.side-icon {
+    background-size: 10pt 10pt;
+    background-position: 2px 2px;
+    @apply pl-7 bg-no-repeat;
+}
+
+#side-panel .side-icon {
+    background-size: 12pt 12pt;
+}
+
+progress {
+    @apply bg-rose-50 ml-2 mt-2 h-3 rounded-xl w-[130px]
+}
+
+progress::-webkit-progress-value,
+progress::-moz-progress-bar {
+    @apply bg-rose-400
+}
+
+.prog-2 {
+    @apply bg-orange-50
+}
+
+.prog-2::-webkit-progress-value,
+.prog-2::-moz-progress-bar {
+    @apply bg-orange-400
+}
+
+main {
+    @apply w-full;
+}
+
+#content {
+    background-image: radial-gradient(#0001 0%, #0001 10%, #0000 10%, #0000 100%);
+    background-size: 20px 20px;
+    @apply flex flex-col flex-1 px-4 py-2;
+}
+
+.box {
+    @apply flex flex-col gap-2 p-1;
+}
+
+.inner-box {
+    @apply flex gap-4 items-start;
+}
+
+.title {
+    @apply text-sky-700 text-2xl border-b-2 border-slate-300 my-1;
+}
+
+.logo {
+    min-width: 32px;
+    @apply aspect-square bg-cover;
+}
+
+.stack-box>* {
+    @apply flex-auto
+}
+
+.stack-box {
+    @apply border p-2 pt-1 rounded-lg bg-sky-100 bg-opacity-70 flex flex-col items-center flex-auto
+}
+
+.stack-list {
+    @apply flex gap-2 flex-wrap
+}
+
+.stack-item {
+    @apply bg-cover w-6 h-6 aspect-square object-contain;
+}
+
+.stack-title {
+    @apply text-sky-700 font-bold mb-1
+}
+
+@page {
+    size: A4;
+    margin: 0mm;
+    width: 210mm;
+    height: 297mm;
+}
+
+@media print {
+
+    html,
+    body,
+    #side-panel,
+    #content {
+
+        height: 297mm;
+    }
+}
